@@ -2,7 +2,7 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${URL}    http://localhost:8888/game/xo.jsp
+${URL}    http://localhost:8080/game/index.jsp
 ${BROWSER}    chrome
 
 *** Test Cases ***

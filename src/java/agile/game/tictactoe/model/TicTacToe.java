@@ -95,11 +95,20 @@ public class TicTacToe {
     }
      
     //Method swapTurn
-     public String swapTurn(int countFillTable){
+     public String swapTurn(){
          if(countFillTable % 2 == 0){
              return "O";
          }else{
              return "X";
+         }
+     }
+     
+     //Method isTie 
+     public void isTie(){
+         if(countFillTable<9){
+             swapTurn();
+         }else {
+             tieScore++;
          }
      }
 }

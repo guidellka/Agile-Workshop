@@ -91,4 +91,14 @@ public class TicTacToe {
      public void createTable(){
         valueFillTable = new String[9];
     }
+     
+     public void updateScorePlayer(String player){
+         if(player.equals("X")){
+             player1Score++;
+         }else{
+             if(player.equals("O")){
+                 player2Score++;
+             }
+         }
+     }
 }

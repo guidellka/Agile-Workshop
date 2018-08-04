@@ -12,18 +12,18 @@ package agile.game.tictactoe.model;
 public class TicTacToe {
 
     private int countFillTable;
-    private int valueFillTable[];
+    private String valueFillTable[];
     private String player1;
     private String player2;
     private int player1Score;
     private int player2Score;
     private int tieScore;
-
+    
     public void setCountFillTable(int countFillTable) {
         this.countFillTable = countFillTable;
     }
 
-    public void setValueFillTable(int[] valueFillTable) {
+    public void setValueFillTable(String[] valueFillTable) {
         this.valueFillTable = valueFillTable;
     }
 
@@ -51,7 +51,7 @@ public class TicTacToe {
         return countFillTable;
     }
 
-    public int[] getValueFillTable() {
+    public String[] getValueFillTable() {
         return valueFillTable;
     }
 
@@ -75,4 +75,9 @@ public class TicTacToe {
         return tieScore;
     }
     
+    public void addXOToSlot(String player,int position){
+        valueFillTable[position] = player;
+        countFillTable++;
+    }
+     
 }

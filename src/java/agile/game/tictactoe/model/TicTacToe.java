@@ -19,6 +19,12 @@ public class TicTacToe {
     private int player2Score;
     private int tieScore;
     
+    public TicTacToe(String player1,String player2){
+        this.player1 = player1;
+        this.player2 = player2;
+    }
+
+
     public void setCountFillTable(int countFillTable) {
         this.countFillTable = countFillTable;
     }
@@ -80,14 +86,8 @@ public class TicTacToe {
         countFillTable++;
     }
      
-    //METHOD start game
-    public void startGame(){
-        player1 = "X";
-        player2 = "O";
-        player1Score = 0;
-        player2Score = 0;
-        tieScore = 0;
-    }
+    
+    //Method createTable
      public void createTable(){
         valueFillTable = new String[9];
     }
@@ -99,6 +99,15 @@ public class TicTacToe {
              if(player.equals("O")){
                  player2Score++;
              }
+         }
+     }
+     
+    //Method swapTurn
+     public String swapTurn(int countFillTable){
+         if(countFillTable % 2 == 0){
+             return "O";
+         }else{
+             return "X";
          }
      }
 }

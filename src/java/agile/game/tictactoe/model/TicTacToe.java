@@ -80,4 +80,12 @@ public class TicTacToe {
         countFillTable++;
     }
      
+    //METHOD start game
+    public void startGame(){
+        player1 = "X";
+        player2 = "O";
+        player1Score = 0;
+        player2Score = 0;
+        tieScore = 0;
+    }
 }

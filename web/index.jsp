@@ -80,19 +80,19 @@
             </div>
             <table class="table table-borderless board white text-center" id="board">
                 <tr >
-                    <td id="R1_C1" onclick="choosePosition(this)">0</td>
-                    <td id="R1_C2" onclick="choosePosition(this)">1</td>
-                    <td id="R1_C3" onclick="choosePosition(this)">2</td>
+                    <td id="R1_C1" onclick="choosePosition(this)"></td>
+                    <td id="R1_C2" onclick="choosePosition(this)"></td>
+                    <td id="R1_C3" onclick="choosePosition(this)"></td>
                 </tr>
                 <tr>
-                    <td id="R2_C1" onclick="choosePosition(this)">3</td>
-                    <td id="R2_C2" onclick="choosePosition(this)">4</td>
-                    <td id="R2_C3" onclick="choosePosition(this)">5</td>
+                    <td id="R2_C1" onclick="choosePosition(this)"></td>
+                    <td id="R2_C2" onclick="choosePosition(this)"></td>
+                    <td id="R2_C3" onclick="choosePosition(this)"></td>
                 </tr>
                 <tr>
-                    <td id="R3_C1" onclick="choosePosition(this)">6</td>
-                    <td id="R3_C2" onclick="choosePosition(this)">7</td>
-                    <td id="R3_C3" onclick="choosePosition(this)">8</td>
+                    <td id="R3_C1" onclick="choosePosition(this)"></td>
+                    <td id="R3_C2" onclick="choosePosition(this)"></td>
+                    <td id="R3_C3" onclick="choosePosition(this)"></td>
                 </tr>
             </table>
             

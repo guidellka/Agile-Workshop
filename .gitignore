@@ -1,6 +1,7 @@
 ### NetBeans ###
 
 nbproject/private/
+nbproject/ant-deploy.xml
 build/
 nbbuild/
 dist/

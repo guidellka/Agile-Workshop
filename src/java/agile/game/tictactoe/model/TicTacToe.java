@@ -18,12 +18,11 @@ public class TicTacToe {
     private int player1Score;
     private int player2Score;
     private int tieScore;
-    
-    public TicTacToe(String player1,String player2){
+
+    public TicTacToe(String player1, String player2) {
         this.player1 = player1;
         this.player2 = player2;
     }
-
 
     public void setCountFillTable(int countFillTable) {
         this.countFillTable = countFillTable;
@@ -80,24 +79,40 @@ public class TicTacToe {
     public int getTieScore() {
         return tieScore;
     }
-    
-    public void addXOToSlot(String player,int position){
+
+    public void addXOToSlot(String player, int position) {
         valueFillTable[position] = player;
         countFillTable++;
     }
-     
-    
+
     //Method createTable
-     public void createTable(){
+    public void createTable() {
         valueFillTable = new String[9];
     }
-     
+
     //Method swapTurn
-     public String swapTurn(int countFillTable){
-         if(countFillTable % 2 == 0){
-             return "O";
-         }else{
-             return "X";
-         }
-     }
+    public String swapTurn(int countFillTable) {
+        if (countFillTable % 2 == 0) {
+            return "O";
+        } else {
+            return "X";
+        }
+    }
+    
+    //Method checkVertical
+    public boolean checkVertical(String player){
+        boolean status = false;
+        if(valueFillTable[0] == player && valueFillTable[3] == player && valueFillTable[6] == player){
+            updateScore(player);
+            status = true;
+        }else if(valueFillTable[1] == player && valueFillTable[4] == player && valueFillTable[7] == player){
+            updateScore(player);
+            status = true;
+        }else if(valueFillTable[2] == player && valueFillTable[5] == player && valueFillTable[8] == player){
+            updateScore(player);
+            status = true;
+        }else{
+            status = false;
+        }
+    }
 }

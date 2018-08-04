@@ -100,4 +100,24 @@ public class TicTacToe {
              return "X";
          }
      }
-}
+     
+     public boolean isCheckHorizontal(String player){
+        
+        boolean isWin = false;
+        if(player == valueFillTable[0] || player == valueFillTable[1] || player == valueFillTable[2] ){
+            updateScorePlayer(player);
+            isWin = true;
+        }else if(player == valueFillTable[3] || player == valueFillTable[4] || player == valueFillTable[5] ){
+            updateScorePlayer(player);
+            isWin = true;
+        }else if(player == valueFillTable[6] || player == valueFillTable[7] || player == valueFillTable[8] ){
+            updateScorePlayer(player);
+            isWin = true;
+        }else {
+            isCheckVertical();
+        }
+        return  isWin;
+    }
+     
+     
+   }

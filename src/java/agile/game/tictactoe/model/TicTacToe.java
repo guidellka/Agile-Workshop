@@ -103,16 +103,45 @@ public class TicTacToe {
     public boolean checkVertical(String player){
         boolean status = false;
         if(valueFillTable[0] == player && valueFillTable[3] == player && valueFillTable[6] == player){
-            updateScore(player);
+            updateScorePlayer(player);
             status = true;
         }else if(valueFillTable[1] == player && valueFillTable[4] == player && valueFillTable[7] == player){
-            updateScore(player);
+            updateScorePlayer(player);
             status = true;
         }else if(valueFillTable[2] == player && valueFillTable[5] == player && valueFillTable[8] == player){
-            updateScore(player);
+            updateScorePlayer(player);
             status = true;
         }else{
             status = false;
         }
+        return status;
     }
+     
+     public void updateScorePlayer(String player){
+         if(player.equals("X")){
+             player1Score++;
+         }else{
+             if(player.equals("O")){
+                 player2Score++;
+             }
+         }
+     }
+     
+    //Method swapTurn
+     public String swapTurn(){
+         if(countFillTable % 2 == 0){
+             return "O";
+         }else{
+             return "X";
+         }
+     }
+     
+     //Method isTie 
+     public void isTie(){
+         if(countFillTable<9){
+             swapTurn();
+         }else {
+             tieScore++;
+         }
+     }
 }

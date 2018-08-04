@@ -139,13 +139,13 @@ public class TicTacToe {
     public boolean isCheckHorizontal(String player) {
 
         boolean isWin = false;
-        if (valueFillTable[0].equals(player) || valueFillTable[1].equals(player) || valueFillTable[2].equals(player)) {
+        if (valueFillTable[0].equals(player) && valueFillTable[1].equals(player) && valueFillTable[2].equals(player)) {
             updateScorePlayer(player);
             isWin = true;
-        } else if (valueFillTable[3].equals(player) || valueFillTable[4].equals(player) || valueFillTable[5].equals(player)) {
+        } else if (valueFillTable[3].equals(player) && valueFillTable[4].equals(player) && valueFillTable[5].equals(player)) {
             updateScorePlayer(player);
             isWin = true;
-        } else if (valueFillTable[6].equals(player) || valueFillTable[7].equals(player) || valueFillTable[8].equals(player)) {
+        } else if (valueFillTable[6].equals(player) && valueFillTable[7].equals(player) && valueFillTable[8].equals(player)) {
             updateScorePlayer(player);
             isWin = true;
         } else {

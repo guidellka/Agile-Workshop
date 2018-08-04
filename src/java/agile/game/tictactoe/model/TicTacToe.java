@@ -18,12 +18,11 @@ public class TicTacToe {
     private int player1Score;
     private int player2Score;
     private int tieScore;
-    
-    public TicTacToe(String player1,String player2){
+
+    public TicTacToe(String player1, String player2) {
         this.player1 = player1;
         this.player2 = player2;
     }
-
 
     public void setCountFillTable(int countFillTable) {
         this.countFillTable = countFillTable;
@@ -80,20 +79,56 @@ public class TicTacToe {
     public int getTieScore() {
         return tieScore;
     }
-    
-    public void addXOToSlot(String player,int position){
+
+    public void addXOToSlot(String player, int position) {
         valueFillTable[position] = player;
         countFillTable++;
     }
-     
-    
+
     //Method createTable
-     public void createTable(){
+    public void createTable() {
         valueFillTable = new String[9];
     }
+
+    //Method swapTurn
+    public String swapTurn(int countFillTable) {
+        if (countFillTable % 2 == 0) {
+            return "O";
+        } else {
+            return "X";
+        }
+    }
+    
+    //Method checkVertical
+    public boolean isCheckVertical(String player){
+        boolean status = false;
+        if(valueFillTable[0].equals(player) && valueFillTable[3].equals(player) && valueFillTable[6].equals(player)){
+            updateScorePlayer(player);
+            status = true;
+        }else if(valueFillTable[1].equals(player) && valueFillTable[4].equals(player) && valueFillTable[7].equals(player)){
+            updateScorePlayer(player);
+            status = true;
+        }else if(valueFillTable[2].equals(player) && valueFillTable[5].equals(player) && valueFillTable[8].equals(player)){
+            updateScorePlayer(player);
+            status = true;
+        }else{
+            status = false;
+        }
+        return status;
+    }
+     
+     public void updateScorePlayer(String player){
+         if(player.equals("X")){
+             player1Score++;
+         }else{
+             if(player.equals("O")){
+                 player2Score++;
+             }
+         }
+     }
      
     //Method swapTurn
-     public String swapTurn(int countFillTable){
+     public String swapTurn(){
          if(countFillTable % 2 == 0){
              return "O";
          }else{
@@ -114,10 +149,19 @@ public class TicTacToe {
             updateScorePlayer(player);
             isWin = true;
         }else {
-            isCheckVertical();
+            isWin = false;
         }
         return  isWin;
     }
      
      
-   }
+   
+     //Method isTie 
+     public void isTie(){
+         if(countFillTable<9){
+             swapTurn();
+         }else {
+             tieScore++;
+         }
+     }
+}

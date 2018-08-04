@@ -6,6 +6,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
-ui/atdd/ui/log.html
-ui/atdd/ui/output.xml
-ui/atdd/ui/report.html
+atdd/ui/log.html
+atdd/ui/output.xml
+atdd/ui/report.html

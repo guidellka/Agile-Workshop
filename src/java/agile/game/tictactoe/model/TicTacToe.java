@@ -88,4 +88,7 @@ public class TicTacToe {
         player2Score = 0;
         tieScore = 0;
     }
+     public void createTable(){
+        valueFillTable = new String[9];
+    }
 }

@@ -35,6 +35,12 @@
                 vertical-align: middle;
                 font-size: 40px;
             }
+            .board td:hover{
+                height: 100px;
+                width: 100px;
+                vertical-align: middle;
+                background-color: #474747;
+            }
             .board #R1_C1{
                 border-right: 7px solid white;
                 border-bottom: 7px solid white;

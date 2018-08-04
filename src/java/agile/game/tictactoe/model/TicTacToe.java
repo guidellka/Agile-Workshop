@@ -88,7 +88,18 @@ public class TicTacToe {
         player2Score = 0;
         tieScore = 0;
     }
+    
+    //Method createTable
      public void createTable(){
         valueFillTable = new String[9];
     }
+     
+    //Method swapTurn
+     public String swapTurn(int countFillTable){
+         if(countFillTable % 2 == 0){
+             return "O";
+         }else{
+             return "X";
+         }
+     }
 }

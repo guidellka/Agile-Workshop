@@ -98,50 +98,93 @@ public class TicTacToe {
             return "X";
         }
     }
-    
+
     //Method checkVertical
-    public boolean checkVertical(String player){
+    public boolean isCheckVertical(String player) {
         boolean status = false;
-        if(valueFillTable[0] == player && valueFillTable[3] == player && valueFillTable[6] == player){
+        if (valueFillTable[0].equals(player) && valueFillTable[3].equals(player) && valueFillTable[6].equals(player)) {
             updateScorePlayer(player);
             status = true;
-        }else if(valueFillTable[1] == player && valueFillTable[4] == player && valueFillTable[7] == player){
+        } else if (valueFillTable[1].equals(player) && valueFillTable[4].equals(player) && valueFillTable[7].equals(player)) {
             updateScorePlayer(player);
             status = true;
-        }else if(valueFillTable[2] == player && valueFillTable[5] == player && valueFillTable[8] == player){
+        } else if (valueFillTable[2].equals(player) && valueFillTable[5].equals(player) && valueFillTable[8].equals(player)) {
             updateScorePlayer(player);
             status = true;
-        }else{
+        } else {
             status = false;
         }
         return status;  
     }
-     
-     public void updateScorePlayer(String player){
-         if(player.equals("X")){
-             player1Score++;
-         }else{
-             if(player.equals("O")){
-                 player2Score++;
-             }
-         }
-     }
-     
+
+    public void updateScorePlayer(String player) {
+        if (player.equals("X")) {
+            player1Score++;
+        } else {
+            if (player.equals("O")) {
+                player2Score++;
+            }
+        }
+    }
+
     //Method swapTurn
-     public String swapTurn(){
-         if(countFillTable % 2 == 0){
-             return "O";
-         }else{
-             return "X";
-         }
-     }
-     
-     //Method isTie 
-     public void isTie(){
-         if(countFillTable<9){
-             swapTurn();
-         }else {
-             tieScore++;
-         }
-     }
+    public String swapTurn() {
+        if (countFillTable % 2 == 0) {
+            return "O";
+        } else {
+            return "X";
+        }
+    }
+
+    public boolean isCheckHorizontal(String player) {
+
+        boolean isWin = false;
+        if (valueFillTable[0].equals(player) || valueFillTable[1].equals(player) || valueFillTable[2].equals(player)) {
+            updateScorePlayer(player);
+            isWin = true;
+        } else if (valueFillTable[3].equals(player) || valueFillTable[4].equals(player) || valueFillTable[5].equals(player)) {
+            updateScorePlayer(player);
+            isWin = true;
+        } else if (valueFillTable[6].equals(player) || valueFillTable[7].equals(player) || valueFillTable[8].equals(player)) {
+            updateScorePlayer(player);
+            isWin = true;
+        } else {
+            isWin = false;
+        }
+        return isWin;
+    }
+
+    //Method isTie 
+    public void isTie() {
+        if (countFillTable < 9) {
+            swapTurn();
+        } else {
+            tieScore++;
+        }
+    }
+    //Method checkDiagonalRightToLeft
+
+    public boolean isCheckDiagonalRightToLeft(String player) {
+        boolean status = false;
+        if (valueFillTable[2].equals(player) && valueFillTable[4].equals(player) && valueFillTable[6].equals(player)) {
+            updateScorePlayer(player);
+            status = true;
+        } else {
+            status = false;
+        }
+        return status;
+    }
+    
+    //Method checkDiagonalLeftToRight
+
+    public boolean isCheckDiagonalLeftToRight(String player) {
+        boolean status = false;
+        if (valueFillTable[0].equals(player) && valueFillTable[4].equals(player) && valueFillTable[8].equals(player)) {
+            updateScorePlayer(player);
+            status = true;
+        } else {
+            status = false;
+        }
+        return status;
+    }
 }

@@ -92,6 +92,16 @@ public class TicTacToe {
         valueFillTable = new String[9];
     }
      
+     public void updateScorePlayer(String player){
+         if(player.equals("X")){
+             player1Score++;
+         }else{
+             if(player.equals("O")){
+                 player2Score++;
+             }
+         }
+     }
+     
     //Method swapTurn
      public String swapTurn(){
          if(countFillTable % 2 == 0){

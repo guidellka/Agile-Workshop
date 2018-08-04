@@ -12,7 +12,7 @@ package agile.game.tictactoe.model;
 public class TicTacToe {
 
     private int countFillTable;
-    private int valueFillTable[];
+    private String valueFillTable[];
     private String player1;
     private String player2;
     private int player1Score;
@@ -24,11 +24,12 @@ public class TicTacToe {
         this.player2 = player2;
     }
 
+
     public void setCountFillTable(int countFillTable) {
         this.countFillTable = countFillTable;
     }
 
-    public void setValueFillTable(int[] valueFillTable) {
+    public void setValueFillTable(String[] valueFillTable) {
         this.valueFillTable = valueFillTable;
     }
 
@@ -56,7 +57,7 @@ public class TicTacToe {
         return countFillTable;
     }
 
-    public int[] getValueFillTable() {
+    public String[] getValueFillTable() {
         return valueFillTable;
     }
 
@@ -80,12 +81,23 @@ public class TicTacToe {
         return tieScore;
     }
     
-    //METHOD start game
-//    public void startGame(){
-//        player1 = "X";
-//        player2 = "O";
-//        player1Score = 0;
-//        player2Score = 0;
-//        tieScore = 0;
-//    }
+    public void addXOToSlot(String player,int position){
+        valueFillTable[position] = player;
+        countFillTable++;
+    }
+     
+    
+    //Method createTable
+     public void createTable(){
+        valueFillTable = new String[9];
+    }
+     
+    //Method swapTurn
+     public String swapTurn(int countFillTable){
+         if(countFillTable % 2 == 0){
+             return "O";
+         }else{
+             return "X";
+         }
+     }
 }
